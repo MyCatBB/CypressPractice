@@ -1,0 +1,92 @@
+body {
+  text-align: center;
+}
+
+.catImage {
+  width: 50%;
+  height: auto;
+}
+
+.LogInErrorImage {
+  margin-top: 10px;
+  width: 40%;
+  height: auto;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.LogInPage {
+  &__mainImage {
+    margin-top: 10px;
+    width: 40%;
+    height: auto;
+  }
+}
+
+.Header {
+  &__container {
+    color: wheat;
+    background-color: black;
+    margin: 0px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__linkContainer {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin-left: 50px;
+  }
+  &__pageLink {
+    margin: 0 40px 0 40px;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-decoration-line: none;
+  }
+  &__logOut {
+    margin-right: 50px;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+}
+
+.AboutPage {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 100px;
+  }
+  &__imageContainer {
+    margin: 0px;
+    padding: 0px;
+    justify-items: right;
+  }
+  &__introductionImage {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin-right: 30px;
+  }
+  &__textContainer {
+    list-style-position: inside;
+    text-align: left;
+    ul {
+      padding: 0px;
+    }
+  }
+  &__instagramLogo {
+    width: 1.4%;
+    height: auto;
+  }
+}

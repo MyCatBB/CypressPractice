@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import GalleryPage from "./pages/GalleryPage";
+import { isAuthenticated } from "./auth";
+import "./App.scss";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/home"
+          element={isAuthenticated() ? <HomePage /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/about"
+          element={isAuthenticated() ? <AboutPage /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/gallery"
+          element={
+            isAuthenticated() ? <GalleryPage /> : <Navigate to="/login" />
+          }
+        />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
